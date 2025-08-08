@@ -20,7 +20,9 @@ function agregarAmigo() {
 
     // 4. limpiar el campo de entrada
     input.value = "";
+    mostrarLista();
 }
+
 
 // Función para actualizar la lista de amigos
 function mostrarLista() {
@@ -43,9 +45,9 @@ function mostrarLista() {
 }
 
 // Función para sortear los amigos
-function SortearAmigo() {
+function sortearAmigo() {
     // 1. Validar que haya amigos disponibles
-    if (amigos.lemgth === 0){
+    if (amigos.length === 0){
         alert("No hay amigos en la lista para sortear.");
         return;
     }
