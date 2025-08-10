@@ -8,15 +8,18 @@ function agregarAmigo() {
     // 1. Captura el valor del campo de entrada
     const input = document.getElementById("amigo");
     const nombre = input.value.trim(); // "trim()" elimina espacios al inicio y al final
+    console.log("Botón Añadir pulsado. Texto en input:", nombre);
 
     // 2. Validar la entrada
     if (nombre === ""){
+        console.log("Nombre vacío. Se cancela el agregado.");
         alert("Por favor, inserte un nombre.");
         return; // Sale de la función si no hay nombre
     }
 
     // 3. Actualizar el array de amigos
     amigos.push(nombre);
+    console.log("Array después de push:", amigos);
 
     // 4. limpiar el campo de entrada
     input.value = "";
@@ -46,6 +49,7 @@ function mostrarLista() {
 
 // Función para sortear los amigos
 function sortearAmigo() {
+    console.log("Botón sortear pulsado. Estado Array:", amigos);
     // 1. Validar que haya amigos disponibles
     if (amigos.length === 0){
         alert("No hay amigos en la lista para sortear.");
@@ -53,10 +57,11 @@ function sortearAmigo() {
     }
 
     // 2. Generar un índice aleatorio
-    const IndiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    console.log("Índice aleatorio elegido:", indiceAleatorio);
 
     // 3. Obtener el nombre sorteado
-    const amigoSecreto = amigos[IndiceAleatorio];
+    const amigoSecreto = amigos[indiceAleatorio];
 
     // 4. Mostrar el resultado
     const resultado = document.getElementById("resultado");
